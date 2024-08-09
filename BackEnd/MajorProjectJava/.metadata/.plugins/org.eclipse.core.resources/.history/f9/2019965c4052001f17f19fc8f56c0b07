@@ -1,0 +1,63 @@
+package com.app.service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import javax.transaction.Transactional;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.dto.ApiResponse;
+import com.app.dto.OrderDto;
+import com.app.dto.ProductDto;
+import com.app.entities.Order;
+import com.app.entities.Product;
+import com.app.exceptions.ResourceNotFoundException;
+import com.app.repository.OrderRepository;
+@Service
+@Transactional
+public class OrderServiceImpl implements OrderService {
+	@Autowired
+	private OrderRepository repo;
+	
+	@Autowired
+	private ModelMapper mapper;
+
+	@Override
+	public List<OrderDto> getAllOrder() {
+		
+		return repo.findAll()
+				.stream()
+				.map(order->mapper.map(order,OrderDto.class))
+				.collect(Collectors.toList());
+	}
+
+	@Override
+	public Order addNewOrder(Order newOrder) {
+		
+		return repo.save(newOrder);
+	}
+
+	@Override
+	public ApiResponse deleteOrder(Long orderid) {
+		Order delOrder=repo.findById(orderid)
+				.orElseThrow(()->new ResourceNotFoundException("Invalid Order Id!!"));
+		repo.delete(delOrder);
+		return new ApiResponse("Product with id "+delOrder.getId()+"deleted !!");
+	}
+
+	@Override
+	public Order GetOrderById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ApiResponse UpdateOrder(Order orderid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.app.dto;
+
+public class BaseDto {
+	private Long id;
+	public BaseDto() {
+		// TODO Auto-generated constructor stub
+	}
+	
+}

@@ -1,0 +1,9 @@
+package com.app.dto;
+
+public class ProductDto {
+	private String pname;
+	private String description;
+	private int stock;
+	private double price;
+	private String gender;
+}

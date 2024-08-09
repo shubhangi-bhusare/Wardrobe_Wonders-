@@ -1,0 +1,46 @@
+package com.app.service;
+
+import javax.transaction.Transactional;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.dto.ApiResponse;
+import com.app.entities.Cart;
+import com.app.repository.CartRepository;
+
+
+@Service
+@Transactional
+public class CartServiceImpl implements CartService {
+	@Autowired
+	private CartRepository repo;
+	
+	@Autowired
+	private ModelMapper mapper;
+
+	@Override
+	public Cart addNewCart(Cart newCart) {
+		return repo.save(newCart);
+	}
+
+	@Override
+	public ApiResponse deleteCart(Long Cartid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Cart GetCartById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ApiResponse UpdateCart(Cart cart) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

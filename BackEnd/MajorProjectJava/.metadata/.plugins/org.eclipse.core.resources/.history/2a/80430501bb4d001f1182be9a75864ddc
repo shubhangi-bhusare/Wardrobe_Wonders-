@@ -1,0 +1,21 @@
+package com.app.service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import com.app.dto.UserDto;
+@Service
+@Transactional
+public class UserServiceImpl implements UserService {
+	
+
+	@Override
+	public List<UserDto> getAllUsers() {
+		
+		return null;
+	}
+
+}

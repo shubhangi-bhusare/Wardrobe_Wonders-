@@ -1,0 +1,8 @@
+package com.app.exceptions;
+
+public class ResourceNotFoundeException extends Exception {
+	public ResourceNotFoundeException(String msg) {
+		super(msg);
+	}
+
+}
