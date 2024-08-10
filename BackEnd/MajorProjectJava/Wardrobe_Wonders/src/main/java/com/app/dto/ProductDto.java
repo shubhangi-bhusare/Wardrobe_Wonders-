@@ -9,21 +9,24 @@ public class ProductDto extends BaseDto{
 	private String description;
 	private int stock;
 	private double price;
-	private String gender;
+	private String genderType;
 	
 	private ProductCategory category;
 	public ProductDto() {
 		// TODO Auto-generated constructor stub
 	}
-	public ProductDto(String pname, String description, int stock, double price, String gender, ProductCategory category) {
+	
+	public ProductDto(String pname, String description, int stock, double price, String genderType,
+			ProductCategory category) {
 		super();
 		this.pname = pname;
 		this.description = description;
 		this.stock = stock;
 		this.price = price;
-		this.gender = gender;
+		this.genderType = genderType;
 		this.category = category;
 	}
+
 	public String getPname() {
 		return pname;
 	}
@@ -48,23 +51,28 @@ public class ProductDto extends BaseDto{
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+	
 	public ProductCategory getCategory() {
 		return category;
 	}
 	public void setCategory(ProductCategory category) {
 		this.category = category;
 	}
+
+	public String getGenderType() {
+		return genderType;
+	}
+
+	public void setGenderType(String genderType) {
+		this.genderType = genderType;
+	}
+
 	@Override
 	public String toString() {
 		return "ProductDto [pname=" + pname + ", description=" + description + ", stock=" + stock + ", price=" + price
-				+ ", gender=" + gender + ", category=" + category + "]";
+				+ ", genderType=" + genderType + ", category=" + category + "]";
 	}
+	
 
 	
 	

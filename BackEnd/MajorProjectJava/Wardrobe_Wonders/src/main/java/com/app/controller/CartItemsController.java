@@ -3,6 +3,8 @@ package com.app.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,32 +29,34 @@ public class CartItemsController {
 	private CartItemService cservice;
 	
 	@GetMapping("/getCartItem")
-	public List<CartItemDto> getAllCartItems()
+	public ResponseEntity<?>  getAllCartItems()
 	{
-		return cservice.getAllCartItemDto();
+		return ResponseEntity.ok(cservice.getAllCartItemDto());
 	}
 	
 	@GetMapping("/{id}")
-	public CartItem getCartItemById(Long id)
+	public ResponseEntity<?>  getCartItemById(Long id)
 	{
-		return cservice.GetCartItemById(id);
+		return ResponseEntity.ok(cservice.GetCartItemById(id));
 	}
 	
 	@PostMapping("/addCartItem")
-	public CartItem addCartItem(@RequestBody CartItem cartItem)
+	public ResponseEntity<?>  addCartItem(@RequestBody CartItem cartItem)
 	{
-		return cservice.addNewCartItem(cartItem);
+		return ResponseEntity.status(HttpStatus.CREATED)
+				.body(cservice.addNewCartItem(cartItem));
 	}
 	
 	@DeleteMapping("/deleteCartItem/{id}")
-	public ApiResponse DeleteCartItem(@PathVariable Long id)
+	public ResponseEntity<?>  DeleteCartItem(@PathVariable Long id)
 	{
-		return cservice.deleteCartItem(id);
+		return ResponseEntity.ok(cservice.deleteCartItem(id));
 	}
 	
 	@PutMapping("/updateUser")
-	public ApiResponse UpdateCartItem(@RequestBody CartItem cartItem)
+	public ResponseEntity<?>  UpdateCartItem(@RequestBody CartItem cartItem)
 	{
-		return cservice.UpdateCartItem(cartItem);
+		return ResponseEntity.status(HttpStatus.ACCEPTED)
+				.body(cservice.UpdateCartItem(cartItem));
 	}
 }

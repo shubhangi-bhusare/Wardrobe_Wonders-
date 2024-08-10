@@ -2,6 +2,7 @@ package com.app.entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -10,7 +11,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name="payments")
 public class Payment extends BaseEntity {
+
 	private double amount;
+
 	private LocalDate paymentDate;
 	@Enumerated(EnumType.STRING)
 	private PaymentMode mode;

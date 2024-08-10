@@ -1,6 +1,7 @@
 package com.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,15 +23,16 @@ public class PaymentController {
 	private PaymentService pservice;
 	
 	@GetMapping("/getPaymentId/{id}")
-	 public ResponseEntity<?> getProducts(@PathVariable Long id)
+	 public ResponseEntity<?> getPayment(@PathVariable Long id)
 	 {
 		 return ResponseEntity.ok(pservice.GetPayment(id));
 	 }
 	
 	@PostMapping("/createPayment")
-	 public ResponseEntity<?> AddProduct( @RequestBody Payment payment)
+	 public ResponseEntity<?> AddPayment( @RequestBody Payment payment)
 	 {
-		 return ResponseEntity.ok(pservice.createPayment(payment));
+		 return ResponseEntity.status(HttpStatus.CREATED)
+					.body(pservice.createPayment(payment));
 	 }
 	
 	@DeleteMapping("/cancelPayment/{id}")

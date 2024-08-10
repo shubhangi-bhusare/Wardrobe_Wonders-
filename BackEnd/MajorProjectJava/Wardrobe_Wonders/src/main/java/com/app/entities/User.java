@@ -1,25 +1,33 @@
 package com.app.entities;
 
-import javax.persistence.CascadeType;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+
 import javax.persistence.Table;
 
 @Entity
 @Table(name="users")
 public class User extends BaseEntity {
+	@Column(length = 100)
 	private String name;
+	@Column(length = 50,nullable = false)
 	private String email;
+	@Column(length = 30,nullable = false)
 	private String password;
 	@Enumerated(EnumType.STRING)
 	private Role role;
+	@Column(length = 12)
 	private String mobileNumber;
+	@Column(length = 50)
 	private String address;
+	@Column(length = 10)
 	private String zipcode;
+	@Column(length = 30)
 	private String city;
+	@Column(length = 30)
 	private String state;
 	
 	

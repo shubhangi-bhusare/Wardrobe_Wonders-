@@ -1,11 +1,13 @@
 package com.app.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="categories")
 public class ProductCategory extends BaseEntity {
+	@Column(length = 30)
 	private String cname;
 	public ProductCategory() {
 		// TODO Auto-generated constructor stub

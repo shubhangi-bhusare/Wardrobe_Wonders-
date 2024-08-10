@@ -3,11 +3,7 @@ import javax.persistence.*;
 
 
 @Entity
-public class CartItem {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class CartItem extends BaseEntity{
 
     @ManyToOne
     @JoinColumn(name = "cart_id", nullable = false)
@@ -21,13 +17,7 @@ public class CartItem {
     private int quantity;
 
     // Getters and setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    
 
     public Cart getCart() {
         return cart;

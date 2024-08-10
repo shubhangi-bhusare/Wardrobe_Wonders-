@@ -2,11 +2,13 @@ package com.app.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,7 +38,8 @@ public class ProductController {
 	@PostMapping("/addProduct")
 	 public ResponseEntity<?> AddProduct( @RequestBody Product product)
 	 {
-		 return ResponseEntity.ok(pservice.addNewProduct(product));
+		 return ResponseEntity.status(HttpStatus.CREATED)
+					.body(pservice.addNewProduct(product));
 	 }
 	@GetMapping("/getProductById/{id}")
 	 public ResponseEntity<?> getProducts(@PathVariable Long id)
@@ -44,10 +47,11 @@ public class ProductController {
 		 return ResponseEntity.ok(pservice.GetProductById(id));
 	 }
 	
-	@PostMapping("/updateProduct")
+	@PutMapping("/updateProduct")
 	public ResponseEntity<?> updateProduct(@RequestBody Product prod)
 	 {
-		 return ResponseEntity.ok(pservice.UpdateProduct(prod));
+		return ResponseEntity.status(HttpStatus.ACCEPTED)
+				.body(pservice.UpdateProduct(prod));
 	 }
 }
 

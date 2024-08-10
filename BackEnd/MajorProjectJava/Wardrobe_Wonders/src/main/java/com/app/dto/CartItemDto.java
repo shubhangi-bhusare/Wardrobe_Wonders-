@@ -1,9 +1,4 @@
 package com.app.dto;
-
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
 import com.app.entities.BaseEntity;
 import com.app.entities.Cart;
 import com.app.entities.Product;

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -20,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Entity
 @Table(name="orders")
 public class Order extends BaseEntity {
+
 	private LocalDate purchaseDate;
 	
 	@Enumerated(EnumType.STRING)

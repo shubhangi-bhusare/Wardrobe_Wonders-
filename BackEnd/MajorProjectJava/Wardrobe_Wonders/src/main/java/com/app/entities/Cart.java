@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="carts")
 public class Cart extends BaseEntity {
-	//item details-product name, qty,price
+	
 	@OneToOne
 	@JoinColumn(name="user_id")
 	private User user; 
