@@ -13,7 +13,9 @@ import com.app.dto.ApiResponse;
 import com.app.dto.ProductDto;
 
 import com.app.entities.Product;
+import com.app.entities.ProductCategory;
 import com.app.exceptions.ResourceNotFoundException;
+import com.app.repository.CategoryRepository;
 import com.app.repository.ProductRepository;
 
 
@@ -26,6 +28,8 @@ public class ProductServiceImpl implements ProductService {
 	private ProductRepository repo;
 	@Autowired
 	private ModelMapper mapper;
+	@Autowired
+	private CategoryRepository categoryRepo;
 
 	@Override
 	public List<ProductDto> getAllProducts() {
@@ -35,11 +39,7 @@ public class ProductServiceImpl implements ProductService {
 				.collect(Collectors.toList());
 	}
 
-	@Override
-	public Product addNewProduct(Product newProduct) {
-		// TODO Auto-generated method stub
-		return repo.save(newProduct);
-	}
+	
 
 	@Override
 	public ApiResponse deleteProduct(Long productid) {
@@ -64,6 +64,24 @@ public class ProductServiceImpl implements ProductService {
 			return new ApiResponse("Product with id- "+ product.getId() +" updated successfully!!");
 		}
 		 return new ApiResponse("Product not updated !!");
+	}
+
+
+
+	@Override
+	public ApiResponse addNewProduct(ProductDto newProduct) {
+		
+		//firstly deal with parent table and parent table is ProductCategory
+		//after that add product if and only if category is exists!! i.e mapping is done here
+		
+		ProductCategory category=
+				categoryRepo.findById(newProduct.getCategory_id())//need category repo dependency here
+				.orElseThrow(()->new ResourceNotFoundException("Category not found!!!"));
+		System.out.println("in service of productserviceImpl");
+		Product prod=mapper.map(newProduct,Product.class);
+		prod.setCategory(category);//here set category on our product
+		repo.save(prod);
+		return new ApiResponse("Added new Product with Id- "+prod.getId());
 	}
 
 }

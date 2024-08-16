@@ -1,0 +1,36 @@
+/* Style for the sidebar container */
+.admin-sidebar {
+  width: 150px; /* Reduced width */
+  height: 100vh; /* Full viewport height */
+  background-color: #87ceeb; /* Sky blue background */
+  padding: 15px; /* Reduced padding */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Fixed position to stay in view */
+  top: 0;
+  left: 0;
+  color: #fff; /* White text */
+  font-family: Arial, sans-serif;
+}
+
+/* Style for sidebar links */
+.admin-sidebar a {
+  display: block;
+  padding: 8px 10px; /* Reduced padding */
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px; /* Smaller font size */
+  margin-bottom: 8px; /* Reduced margin */
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover effect for links */
+.admin-sidebar a:hover {
+  background-color: #4682b4; /* Darker blue for hover effect */
+  color: #f8f9fa; /* Light color for text on hover */
+}
+
+/* Optional: Add some spacing to the top of the body to prevent overlap */
+body {
+  margin-left: 190px; /* Adjusted to match sidebar width */
+}

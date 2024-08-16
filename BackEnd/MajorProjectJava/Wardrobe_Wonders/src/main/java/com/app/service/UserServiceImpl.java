@@ -1,6 +1,7 @@
 package com.app.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
@@ -9,6 +10,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import com.app.dto.ApiResponse;
 import com.app.dto.UserDto;
 import com.app.entities.User;
@@ -78,6 +80,27 @@ public class UserServiceImpl implements UserService {
 		}
 		 return new ApiResponse("User not updated !!");
 	}
+	
+//	@Autowired
+//	private PasswordEncoder encoder;
+//	@Override
+//	public SignUp userRegistration(SignUp reqDTO) {
+//		User user=mapper.map(reqDTO, User.class);
+//		if(repo.existsByEmail(reqDTO.getEmail()))
+//			throw new ApiException("Email already exists !!!");
+//		
+//		user.setPassword(encoder.encode(user.getPassword()));//pwd : encrypted using SHA
+//		return mapper.map(repo.save(user), SignUp.class);
+//	}
+	
+	public User authenticate(String email, String password) {
+        Optional<User> user = repo.findByEmail(email);
+        if (user.isPresent() && user.get().getPassword().equals(password)) {
+            return user.get();
+        } else {
+            throw new RuntimeException("Invalid credentials");
+        }
+    }
 
 	
 	

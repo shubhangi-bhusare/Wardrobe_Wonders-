@@ -48,6 +48,14 @@ public class Order extends BaseEntity {
 		this.purchaseDate = purchaseDate;
 		this.status = status;
 	}
+	
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
 
 	public LocalDate getPurchaseDate() {
 		return purchaseDate;

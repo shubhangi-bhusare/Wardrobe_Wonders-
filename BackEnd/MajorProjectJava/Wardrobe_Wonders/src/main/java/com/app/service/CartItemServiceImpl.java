@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.app.dto.ApiResponse;
 import com.app.dto.CartItemDto;
-import com.app.dto.UserDto;
+
 import com.app.entities.CartItem;
 import com.app.entities.User;
 import com.app.exceptions.ResourceNotFoundException;

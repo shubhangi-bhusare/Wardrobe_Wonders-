@@ -9,7 +9,7 @@ import com.app.entities.User;
 
 public interface ProductService {
 		List<ProductDto> getAllProducts();
-		Product addNewProduct(Product newProduct);
+		ApiResponse addNewProduct(ProductDto newProduct);
 		ApiResponse deleteProduct(Long productid);
 		Product GetProductById(Long id);
 		ApiResponse UpdateProduct(Product productid);

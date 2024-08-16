@@ -11,25 +11,31 @@ public class ProductDto extends BaseDto{
 	private double price;
 	private String genderType;
 	
-	private ProductCategory category;
+	private Long category_id;
 	public ProductDto() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public ProductDto(String pname, String description, int stock, double price, String genderType,
-			ProductCategory category) {
+//	public ProductDto(String pname, String description, int stock, double price, String genderType,
+//			ProductCategory category) {
+//		super();
+//		this.pname = pname;
+//		this.description = description;
+//		this.stock = stock;
+//		this.price = price;
+//		this.genderType = genderType;
+//		this.category = category;
+//	}
+	
+	public ProductDto(Long category_id) {
 		super();
-		this.pname = pname;
-		this.description = description;
-		this.stock = stock;
-		this.price = price;
-		this.genderType = genderType;
-		this.category = category;
+		this.category_id = category_id;
 	}
 
 	public String getPname() {
 		return pname;
 	}
+	
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
@@ -52,26 +58,42 @@ public class ProductDto extends BaseDto{
 		this.price = price;
 	}
 	
-	public ProductCategory getCategory() {
-		return category;
-	}
-	public void setCategory(ProductCategory category) {
-		this.category = category;
-	}
+//	public ProductCategory getCategory() {
+//		return category;
+//	}
+//	public void setCategory(ProductCategory category) {
+//		this.category = category;
+//	}
+	
 
 	public String getGenderType() {
 		return genderType;
 	}
 
+	public Long getCategory_id() {
+		return category_id;
+	}
+
+	public void setCategory_id(Long category_id) {
+		this.category_id = category_id;
+	}
+
 	public void setGenderType(String genderType) {
 		this.genderType = genderType;
 	}
+//
+//	@Override
+//	public String toString() {
+//		return "ProductDto [pname=" + pname + ", description=" + description + ", stock=" + stock + ", price=" + price
+//				+ ", genderType=" + genderType + ", category=" + category + "]";
+//	}
 
 	@Override
 	public String toString() {
 		return "ProductDto [pname=" + pname + ", description=" + description + ", stock=" + stock + ", price=" + price
-				+ ", genderType=" + genderType + ", category=" + category + "]";
+				+ ", genderType=" + genderType + ", category_id=" + category_id + "]";
 	}
+	
 	
 
 	

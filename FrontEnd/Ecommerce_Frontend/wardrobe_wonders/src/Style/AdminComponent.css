@@ -1,0 +1,85 @@
+AdminComponent.css
+
+/* Global Styles */
+body {
+    background-color: #fffbea; /* Light yellow background color */
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Dark grey text color */
+  }
+  
+  /* App Container */
+  .adm {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* AdminNavBar Styles */
+  .navbar {
+    background-color: #fc49a5; /* Orange-yellow navbar */
+    border-bottom: 2px solid #f77f00; /* Darker orange border */
+  }
+  
+  .navbar-brand, .navbar-nav .nav-link {
+    color: #fff; /* White text */
+  }
+  
+  .navbar-brand:hover, .navbar-nav .nav-link:hover {
+    color: #fcbf49; /* Hover effect: orange-yellow text */
+    background-color: #f77f00; /* Darker orange background on hover */
+    border-radius: 5px;
+  }
+  
+  /* Routes Container */
+  .Routes {
+    margin-top: 20px;
+  }
+  
+  /* Form Styles */
+  form {
+    background-color: #ffecb3; /* Light yellow-orange form background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  form label {
+    color: #f70077; /* Dark orange labels */
+  }
+  
+  form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #fcbf49; /* Orange-yellow border */
+    border-radius: 5px;
+  }
+  
+  form input:focus, form select:focus, form textarea:focus {
+    border-color: #f70090; /* Darker orange focus border */
+    outline: none;
+    box-shadow: 0 0 5px rgba(247, 127, 0, 0.5);
+  }
+  
+  form button {
+    background-color: #f70063; /* Dark orange button */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #d95d00; /* Slightly darker orange on hover */
+  }
+  
+  form .error {
+    color: #d9534f; /* Red color for errors */
+    font-size: 0.9em;
+  }
+  
+  

@@ -2,9 +2,12 @@ package com.app.controller;
 
 
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.app.entities.User;
 import com.app.service.UserService;
 
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -31,7 +34,7 @@ public class UserController {
 		return ResponseEntity.ok(service.getAllUsers());
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/getById/{id}")
 	public ResponseEntity<?> getUserById(Long id)
 	{
 		return ResponseEntity.ok(service.GetUserById(id));
@@ -43,7 +46,7 @@ public class UserController {
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body(service.addNewUser(user));
 	}
-	
+	@CrossOrigin(origins = "http://localhost:3000")
 	@DeleteMapping("/deleteUser/{uid}")
 	public ResponseEntity<?> DeleteUser(@PathVariable Long uid)
 	{
@@ -54,5 +57,14 @@ public class UserController {
 	public ResponseEntity<?> UpdateUser(@RequestBody User user)
 	{
 		return ResponseEntity.status(HttpStatus.ACCEPTED).body(service.UpdateUser(user));
+	}
+	
+	@PostMapping("/login")
+	public ResponseEntity<?> login(@RequestBody Map<String, String> loginData)
+	{
+		 String email = loginData.get("email");
+	     String password = loginData.get("password");
+		return ResponseEntity.ok(service.authenticate(email, password));
+		
 	}
 }

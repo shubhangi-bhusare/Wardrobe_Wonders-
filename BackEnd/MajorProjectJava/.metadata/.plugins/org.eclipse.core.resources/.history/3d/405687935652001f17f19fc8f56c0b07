@@ -1,7 +1,0 @@
-package com.app.dto;
-
-import com.app.entities.BaseEntity;
-
-public class CartItemDto extends BaseEntity {
-
-}

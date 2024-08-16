@@ -3,6 +3,7 @@ package com.app.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,11 +13,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.app.dto.OrderDto;
 import com.app.entities.Order;
 
 import com.app.service.OrderService;
 
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/orders")
 public class OrderController {
@@ -35,7 +37,7 @@ public class OrderController {
 	 }
 	
 	@PostMapping("/addOrder")
-	 public ResponseEntity<?> AddOrder( @RequestBody Order order)
+	 public ResponseEntity<?> AddOrder( @RequestBody OrderDto order)
 	 {
 		 return ResponseEntity.status(HttpStatus.CREATED)
 					.body(oservice.addNewOrder(order));

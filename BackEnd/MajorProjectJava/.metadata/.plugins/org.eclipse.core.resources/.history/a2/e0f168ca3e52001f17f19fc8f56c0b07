@@ -1,7 +1,0 @@
-package com.app.dto;
-
-import java.time.LocalDate;
-
-public class OrderDto extends BaseDto {
-	private LocalDate purchaseDate;
-}

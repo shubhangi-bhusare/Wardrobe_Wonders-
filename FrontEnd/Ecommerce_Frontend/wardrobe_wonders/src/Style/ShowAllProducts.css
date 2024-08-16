@@ -1,0 +1,45 @@
+/* ShowAllProducts.css */
+
+/* Container for the table */
+.show-all-products-container {
+    width: 100%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Styling the table */
+  .show-all-products-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  /* Table header styling */
+  .show-all-products-table th,
+  .show-all-products-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .show-all-products-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  /* Alternating row colors */
+  .show-all-products-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .show-all-products-table tr:hover {
+    background-color: #ddd;
+  }
+  
+  /* Styling the heading */
+  .show-all-products-heading {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+  }
+  

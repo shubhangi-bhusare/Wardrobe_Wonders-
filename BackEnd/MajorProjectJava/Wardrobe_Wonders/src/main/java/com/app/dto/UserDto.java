@@ -17,8 +17,10 @@ public class UserDto extends BaseDto {
 	public UserDto() {
 		// TODO Auto-generated constructor stub
 	}
-	public UserDto(String name, String email, String password, Role role, String mobileNumber, String address,
-			String zipcode, String city, String state) {
+	
+
+	public UserDto(String name, String email, Role role, String mobileNumber, String address, String zipcode,
+			String city, String state) {
 		super();
 		this.name = name;
 		this.email = email;
@@ -29,6 +31,8 @@ public class UserDto extends BaseDto {
 		this.city = city;
 		this.state = state;
 	}
+
+
 	public String getName() {
 		return name;
 	}

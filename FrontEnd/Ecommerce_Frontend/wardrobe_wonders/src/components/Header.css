@@ -1,0 +1,25 @@
+/* Header.css */
+
+.header {
+    background-color: #87CEEB; /* Sky blue background */
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  }
+  
+  .header-title {
+    color: #ffffff; /* White text color */
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase; /* Makes text uppercase */
+    letter-spacing: 2px; /* Adds spacing between letters */
+  }
+  
+  .header-title:hover {
+    color: #4682B4; /* Steel blue on hover */
+    transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+  }
+  
