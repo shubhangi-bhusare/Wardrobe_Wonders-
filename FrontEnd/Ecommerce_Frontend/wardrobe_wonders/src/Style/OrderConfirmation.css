@@ -1,0 +1,51 @@
+/* OrderConfirmation.css */
+
+.order-confirmation {
+    background-color: #f0f8ff; /* AliceBlue background */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .order-confirmation h1 {
+    color: #4682B4; /* SteelBlue for the heading */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .animated-message p {
+    color: #00BFFF; /* Deep sky blue for the message */
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-in-out, slideUp 2s ease-in-out;
+  }
+  
+  .go-back-button {
+    background-color: #87CEEB; /* Light sky blue background */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .go-back-button:hover {
+    background-color: #00BFFF; /* Deeper sky blue on hover */
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(20px); }
+    to { transform: translateY(0); }
+  }
+  

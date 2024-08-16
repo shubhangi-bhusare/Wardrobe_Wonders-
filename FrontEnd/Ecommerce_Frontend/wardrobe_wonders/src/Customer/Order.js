@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-//import '../Style/AddOrder.css';
+
+import { useNavigate } from 'react-router-dom';
 
 const Order = () => {
   const [orderData, setOrderData] = useState({
@@ -9,7 +10,7 @@ const Order = () => {
     product_id: '',
     payment_id: '',
   });
-
+  const navigate = useNavigate();
   const [message, setMessage] = useState('');
 
   const handleInputChange = (e) => {
@@ -45,6 +46,7 @@ const Order = () => {
           product_id: '',
           payment_id: '',
         });
+        navigate('/Orderconfirmation')
       })
       .catch((error) => {
         setMessage(`Error: ${error.message}`);

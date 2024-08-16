@@ -9,10 +9,10 @@ function CustomerComponent() {
   return (
     <div className="adm">
       <Routes>
-          <Route path="/customer" element={<ProductsPage/>}></Route>
+          {/* <Route path="/customer" element={<ProductsPage/>}></Route>
           <Route path="/cart" element={<CartPage />} />
           <Route path="/payment" element={<Payment />} />
-          <Route path="/order" element={<Order/>} />
+          <Route path="/order" element={<Order/>} /> */}
       </Routes>
     </div>
   );

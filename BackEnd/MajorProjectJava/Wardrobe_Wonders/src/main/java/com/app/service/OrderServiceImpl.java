@@ -42,10 +42,31 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	public List<OrderDto> getAllOrder() {
 		
-		return repo.findAll()
-				.stream()
-				.map(order->mapper.map(order,OrderDto.class))
-				.collect(Collectors.toList());
+//		return repo.findAll()
+//				.stream()
+//				.map(order->mapper.map(order,OrderDto.class))
+//				.collect(Collectors.toList());//foreign key value get null by this type of code
+		
+		//below code give us foreign key value also
+		    return repo.findAll()
+		            .stream()
+		            .map(order -> {
+		                OrderDto dto = new OrderDto();
+		                dto.setId(order.getId());
+		                dto.setPurchaseDate(order.getPurchaseDate());
+		                dto.setStatus(order.getStatus());
+		                dto.setUser_id(order.getUser().getId());
+		                dto.setProduct_id(order.getProduct().getId());
+		                dto.setPayment_id(order.getPayment().getId());
+
+//		                // Custom mappings
+//		                dto.set(order.getUser().getName());
+//		                dto.setProductName(order.getProduct().getName());
+//		                dto.setPaymentMode(order.getPayment().getMode().toString());
+		                return dto;
+		            })
+		            .collect(Collectors.toList());
+		
 	}
 
 //	@Override

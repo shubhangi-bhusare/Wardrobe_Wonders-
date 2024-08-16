@@ -1,3 +1,4 @@
+//Admin functionality
 import httpClient from '../http_common';
 
 const addProduct=(data) => {

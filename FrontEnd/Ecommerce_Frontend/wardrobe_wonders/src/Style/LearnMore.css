@@ -1,0 +1,59 @@
+.learn-more-container {
+    padding: 60px 30px;
+    background-color: #e0f7fa; /* Light cyan background for a fresh look */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 900px;
+    margin: 50px auto; /* Center the container on the page */
+  }
+  
+  .learn-more-title {
+    color: #00796b; /* A deeper sky blue color */
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .learn-more-text {
+    color: #37474f; /* Dark gray for better readability */
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  .learn-more-button {
+    background-color: #00796b; /* Sky blue color matching the title */
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow to button */
+  }
+  
+  .learn-more-button:hover {
+    background-color: #004d40; /* Darker shade of sky blue on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .learn-more-container {
+      padding: 40px 20px;
+    }
+  
+    .learn-more-title {
+      font-size: 2.5rem;
+    }
+  
+    .learn-more-text {
+      font-size: 1.2rem;
+    }
+  
+    .learn-more-button {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+  }
+  

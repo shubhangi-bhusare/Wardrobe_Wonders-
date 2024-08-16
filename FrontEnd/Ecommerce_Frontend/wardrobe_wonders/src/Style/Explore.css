@@ -1,0 +1,52 @@
+/* Explore.css */
+
+.products-page {
+    padding: 20px;
+    background-color: #f0f8ff; /* AliceBlue background for the page */
+  }
+  
+  .products-page h1 {
+    color: #4682B4; /* SteelBlue for the heading */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .product-card {
+    background-color: #ffffff; /* White background for product cards */
+    border: 1px solid #87CEEB; /* Light sky blue border */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #87CEEB; /* Light sky blue border below image */
+  }
+  
+  .product-name {
+    color: #4682B4; /* SteelBlue for product names */
+    margin-top: 10px;
+  }
+  
+  p {
+    text-align: center;
+    color: #4682B4; /* SteelBlue for text */
+    font-size: 18px;
+  }
+  

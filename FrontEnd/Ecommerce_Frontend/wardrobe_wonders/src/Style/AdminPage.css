@@ -1,0 +1,51 @@
+/* AdminPage.css */
+
+.admin-page {
+  background-color: #f0f8ff; /* AliceBlue background for the entire page */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #87CEEB; /* Light sky blue background for the navbar */
+  border-bottom: 2px solid #00BFFF; /* Deeper sky blue border */
+}
+
+.navbar-brand {
+  color: #ffffff !important; /* White text for the brand */
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #ffffff !important; /* White text for nav links */
+  margin-right: 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: #00BFFF; /* Deeper sky blue for hover and active states */
+  border-radius: 5px;
+  color: #ffffff !important; /* Ensure text remains white */
+}
+
+.container-fluid {
+  background-color: #e6f7ff; /* Light sky blue background for content area */
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-grow: 1; /* Ensure the content area expands to fill available space */
+}
+
+@media (max-width: 768px) {
+  .nav-link {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .navbar {
+    text-align: center;
+  }
+}

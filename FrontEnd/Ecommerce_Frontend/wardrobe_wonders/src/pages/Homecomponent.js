@@ -41,14 +41,18 @@ const HomeComponent = () => {
   const navigate = useNavigate();
 
   const handleExploreClick = () => {
-    navigate('/customer'); // Navigate to the desired path, e.g., "/explore"
+    navigate('/explore'); // Navigate to the desired path, e.g., "/explore"
   };
+  const handleLearnMoreClick=()=>{
+    navigate('/learnMore');
+  }
 
   return (
     <div className="home-container">
       <section className="hero-section">
         <div className="hero-content">
-          <h1>Discover Your Unique Style</h1>
+          <h1>Welcome to Wardrobe Wonders!</h1>
+          <h2>Discover Your Unique Style</h2>
           <p>Explore our exclusive collections and elevate your wardrobe.</p>
           <button className="explore-btn" onClick={handleExploreClick}>
             Explore Now
@@ -56,21 +60,21 @@ const HomeComponent = () => {
         </div>
       </section>
 
-      {/* <section className="promotional-section">
+      <section className="promotional-section">
         <div className="promo-content">
           <h2>Seasonal Sale - Up to 50% Off!</h2>
           <p>Grab the best deals on your favorite fashion pieces before they’re gone.</p>
-          <button className="learn-more-btn">Learn More</button>
+          <button className="learn-more-btn" onClick={handleLearnMoreClick}>Learn More</button>
         </div>
-      </section> */}
+      </section>
 
-      <section className="about-section">
+      {/* <section className="about-section">
         <div className="about-content">
           <h2>About Us</h2>
           <p>At Wardrobe Wonders, we believe in celebrating individuality through fashion. Our carefully curated collections are designed to inspire and elevate your style.</p>
-          {/* <button className="read-more-btn">Read More</button> */}
+          <button className="read-more-btn">Read More</button>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

@@ -14,6 +14,8 @@ public class OrderDto extends BaseDto {
 	
 	private Long payment_id;
 	
+	
+	//if we not put default constructor then it give NoSuchMethodException while fetching the data
 	public OrderDto() {
 		// TODO Auto-generated constructor stub
 	}

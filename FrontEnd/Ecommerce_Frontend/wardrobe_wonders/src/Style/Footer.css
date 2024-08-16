@@ -1,51 +1,38 @@
+/* Footer.css */
 .footer {
-    background-color: #87ceeb; /* Light sky blue background */
-    color: #ffffff; /* White text */
-    padding: 20px;
-    text-align: center;
-    border-top: 2px solid #b0e0e6; /* Light blue border */
-  }
-  
-  .footer-content {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-  }
-  
-  .footer-section {
-    flex: 1;
-    padding: 10px;
-  }
-  
-  .footer-section h2,
-  .footer-section h3 {
-    color: #4682b4; /* Steel blue for headings */
-  }
-  
-  .footer-section p {
-    color: #ffffff; /* White text for paragraphs */
-    line-height: 1.6;
-  }
-  
-  .footer-section a {
-    color: #ffffff; /* White text for links */
-    text-decoration: none;
-  }
-  
-  .footer-section a:hover {
-    text-decoration: underline;
-  }
-  
-  .footer-bottom {
-    border-top: 1px solid #b0e0e6;
-    padding-top: 10px;
-    color: #4682b4; /* Steel blue text */
-  }
-  
-  @media (max-width: 768px) {
-    .footer-content {
-      flex-direction: column;
-      text-align: left;
-    }
-  }
-  
+  background-color: #87CEFA; /* Sky blue background */
+  padding: 20px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 10px;
+  padding: 10px;
+}
+
+.footer-section h2,
+.footer-section h3 {
+  color: hsl(267, 77%, 30%);
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  color: #06579e;
+}
+
+.footer-bottom {
+  background-color: #4682B4; /* Darker sky blue */
+  color: #ffffff;
+  padding: 10px 0;
+  margin-top: 3%;
+}

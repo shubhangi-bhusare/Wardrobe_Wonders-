@@ -31,15 +31,29 @@ public class ProductServiceImpl implements ProductService {
 	@Autowired
 	private CategoryRepository categoryRepo;
 
+//	@Override
+//	public List<ProductDto> getAllProducts() {
+//		return repo.findAll()
+//				.stream()
+//				.map(product->mapper.map(product,ProductDto.class))
+//				.collect(Collectors.toList());
+//	}
 	@Override
 	public List<ProductDto> getAllProducts() {
-		return repo.findAll()
-				.stream()
-				.map(product->mapper.map(product,ProductDto.class))
-				.collect(Collectors.toList());
+	    return repo.findAll()
+	            .stream()
+	            .map(product -> {
+	                ProductDto productDto = mapper.map(product, ProductDto.class);
+	                
+	                // Set the category_id manually to avoid null value
+	                if (product.getCategory() != null) {
+	                    productDto.setCategory_id(product.getCategory().getId());
+	                }
+	                
+	                return productDto;
+	            })
+	            .collect(Collectors.toList());
 	}
-
-	
 
 	@Override
 	public ApiResponse deleteProduct(Long productid) {

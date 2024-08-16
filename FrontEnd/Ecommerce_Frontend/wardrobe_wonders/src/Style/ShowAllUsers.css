@@ -1,0 +1,55 @@
+/* ShowAllUsers.css */
+
+.show-all-users-container {
+    background-color: #f0f8ff; /* AliceBlue background for the container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+  }
+  
+  .show-all-users-heading {
+    color: #4682B4; /* SteelBlue for the heading */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .show-all-users-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .show-all-users-table th,
+  .show-all-users-table td {
+    border: 1px solid #87CEEB; /* Light sky blue border */
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .show-all-users-table th {
+    background-color: #87CEEB; /* Light sky blue background for headers */
+    color: #ffffff; /* White text for headers */
+    font-weight: bold;
+  }
+  
+  .show-all-users-table tbody tr:nth-child(even) {
+    background-color: #e6f7ff; /* Lighter sky blue for alternating rows */
+  }
+  
+  .show-all-users-table tbody tr:hover {
+    background-color: #00BFFF; /* Deeper sky blue for hover effect on rows */
+    color: #ffffff; /* White text on hover */
+  }
+  
+  .show-all-users-table td {
+    color: #4682B4; /* SteelBlue text color for table data */
+  }
+  
+  .show-all-users-table tbody tr td[colspan="9"] {
+    text-align: center;
+    font-style: italic;
+    color: #A9A9A9; /* DarkGray for the "No users available" message */
+  }
+  
