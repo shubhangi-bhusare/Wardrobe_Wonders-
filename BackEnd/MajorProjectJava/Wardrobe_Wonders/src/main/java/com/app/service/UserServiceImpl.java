@@ -80,6 +80,8 @@ public class UserServiceImpl implements UserService {
 		}
 		 return new ApiResponse("User not updated !!");
 	}
+
+	
 	
 //	@Autowired
 //	private PasswordEncoder encoder;
